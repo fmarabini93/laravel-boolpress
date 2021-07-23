@@ -15,12 +15,13 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{$post->title}}</td>
-                        <td>SHOW</td>
+                        <td><a href="{{ route('admin.posts.show', $post->id) }}"><button class="btn btn-primary">SHOW</button></a></td>
                         <td>EDIT</td>
                         <td>DELETE</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('admin.posts.create') }}"><button class="btn btn-info">ADD NEW POST</button></a>
     </div>
 @endsection
