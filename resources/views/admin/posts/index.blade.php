@@ -17,7 +17,13 @@
                         <td>{{$post->title}}</td>
                         <td><a href="{{ route('admin.posts.show', $post->id) }}"><button class="btn btn-primary">SHOW</button></a></td>
                         <td><a href="{{ route('admin.posts.edit', $post->id) }}"><button class="btn btn-secondary">EDIT</button></a></td>
-                        <td>DELETE</td>
+                        <td>
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" onclick="return confirm('Are you sure?')">DELETE</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
