@@ -6,3 +6,17 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Partials
+@import 'partials/show';
+@import 'partials/edit';
+
+//Common
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
