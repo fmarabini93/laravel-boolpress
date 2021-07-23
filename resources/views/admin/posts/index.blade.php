@@ -16,7 +16,7 @@
                         <td>{{ $post->id }}</td>
                         <td>{{$post->title}}</td>
                         <td><a href="{{ route('admin.posts.show', $post->id) }}"><button class="btn btn-primary">SHOW</button></a></td>
-                        <td>EDIT</td>
+                        <td><a href="{{ route('admin.posts.edit', $post->id) }}"><button class="btn btn-secondary">EDIT</button></a></td>
                         <td>DELETE</td>
                     </tr>
                 @endforeach
