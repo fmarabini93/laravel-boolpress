@@ -12,7 +12,16 @@
               <label for="content">Post content</label>
               <textarea class="form-control" id="content" rows="3" placeholder="Insert your post content" name="content"></textarea>
             </div>
-            <input type="submit" value="Insert new post">
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category_id" id="category" class="form-control">
+                  <option hidden>Select a category</option>
+                  @foreach ($categories as $category)
+                      <option>{{ $category->name }}</option>
+                  @endforeach
+                </select>
+            </div>
+            <input type="submit" value="Insert new post" class="my-3">
         </form>
     </div>
 @endsection
