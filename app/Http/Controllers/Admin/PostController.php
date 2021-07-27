@@ -40,9 +40,8 @@ class PostController extends Controller
         $data = $request->all();
 
         $newPost = new Post;
-        $newPost->title = $data['title'];
-        $newPost->content = $data['content'];
         $newPost->slug = Str::slug($data['title'].rand(1,145432), '-');
+        $newPost->fill($data);
         $newPost->save();
 
         return redirect()->route('admin.posts.show', $newPost->id);
@@ -65,7 +64,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post) {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.posts.edit', compact(['post', 'categories']));
     }
 
     /**

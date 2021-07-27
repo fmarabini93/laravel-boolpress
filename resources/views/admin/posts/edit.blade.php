@@ -13,6 +13,15 @@
               <label for="content">Post content</label>
               <textarea class="form-control" id="content" rows="3" value="{{ $post->content }}" name="content"></textarea>
             </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select name="category_id" id="category" class="form-control">
+                <option hidden>Select a category</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+              </select>
+            </div>
             <input type="submit" value="Update post">
         </form>
     </div>
