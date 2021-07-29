@@ -8,6 +8,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Category</th>
+                    <th>Tags</th>
                     <th colspan="3">Actions</th>
                 </tr>
             </thead>
@@ -19,6 +20,15 @@
                         <td>
                             @if ($post->category)
                                 {{ $post->category->name }}
+                            @else
+                                None
+                            @endif
+                        </td>
+                        <td>
+                            @if ($post->tags)
+                                @foreach($post->tags as $tag)
+                                    <small>{{ $tag->name }}</small>
+                                @endforeach
                             @else
                                 None
                             @endif

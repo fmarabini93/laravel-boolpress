@@ -23,7 +23,6 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')
         ->name('home');
         Route::resource('posts', 'PostController');
-        Route::get('categories', 'CategoryController@index');
     });
 
 Route::get('{any?}', 'HomeController@index')->where('any', '.*')->name('home');

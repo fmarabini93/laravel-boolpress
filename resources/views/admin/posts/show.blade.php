@@ -9,6 +9,11 @@
             @else
                 <h5 class="my-5">Category not specified</h5>
             @endif
+            @if ($post->tags)
+                @foreach($post->tags as $tag)
+                    <p class="my-5">{{ $tag->name }}</p>
+                @endforeach
+            @endif
             <p>{{ $post->content }}</p>
         </div>
     </div>
