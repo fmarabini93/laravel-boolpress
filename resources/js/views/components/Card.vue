@@ -1,7 +1,8 @@
 <template>
   <div class="card">
       <h2>{{item.title}}</h2>
-      <p>{{item.content}}</p>
+      <p>{{item.slug}}</p>
+      <router-link :to='{name: "show", params: {slug: item.slug}}'>Show post</router-link>
   </div>
 </template>
 
