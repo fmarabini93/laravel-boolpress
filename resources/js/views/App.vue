@@ -1,8 +1,7 @@
 <template>
   <div class="container">
       <div>
-        <h1>Work in Progress</h1>
-        <h3>Site under maintenance</h3>
+        <router-view></router-view>
       </div>
   </div>
 </template>
@@ -18,9 +17,6 @@ export default {
     .container {
         width: 100%;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
     }
 </style>>
